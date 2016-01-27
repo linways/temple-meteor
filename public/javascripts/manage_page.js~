@@ -1,0 +1,49 @@
+var j = jQuery.noConflict();   
+//editor initialization
+var doc;
+var editorFuncs = new EditorFuncs();
+j(document).ready(function(){
+  doc = j('textarea[data-uk-markdownarea]').data('markdownarea').editor.getDoc();
+  j('#editor').hide();
+  j('#save').addClass('disabled');
+
+  //Enable save button
+  j('#title').on('input', function(){
+    j('#save').removeClass('disabled');
+  });
+  j('textarea[data-uk-markdownarea]').data('markdownarea').editor.on('change',function(){
+    j('#save').removeClass('disabled');
+  });
+});
+
+//Add new Button action
+j(document).on('click', '.button.add.new', function(){
+  if(j('#editor').is(':hidden')){
+    j('#editor').show();
+    j('#editor').attr('page_id', 'new');
+    j('#title').html('');
+    doc.setValue('');
+  }
+  var len = doc.getValue().length | j('#title').html().length | 0;
+  if(len!=0){
+    j('.small.confirm.unsaved.modal').modal('setting', {
+      closable  : false,
+      onDeny    : function(){},
+      onApprove : function() {
+        j('#editor').show();
+        j('#editor').attr('page_id', 'new');
+        j('#title').html('');
+        doc.setValue('');
+      }
+  }).modal('show');
+  }
+});
+
+// Save function
+j(document).on('click','#save',function(){
+  editorFuncs.savePage(j('#editor').attr('page_id'));
+  j('#save').addClass('disabled');
+});
+
+
+})
