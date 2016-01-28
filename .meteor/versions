@@ -28,6 +28,9 @@ ecmascript-runtime@0.2.6
 ejson@1.0.7
 es5-shim@4.1.14
 fastclick@1.0.7
+fortawesome:fontawesome@4.4.0_1
+froala:editor@2.0.5
+froala:editor-reactive@2.0.5_1
 geojson-utils@1.0.4
 github@1.1.4
 hot-code-push@1.0.0
@@ -77,3 +80,4 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
+zcurtis:uikit@2.24.3_1

@@ -9,7 +9,7 @@ body {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: #FAFAFA;
   margin: 0px;
   padding: 0px;
@@ -75,6 +75,7 @@ body {
 
 #feed .middle.column {
   padding: 1em 2em;
+  background-color: #fff;
 }
 
 #feed .middle.column h2 {
@@ -83,7 +84,7 @@ body {
 
 #feed .right.column {
   padding: 1em 2em;
-  background-color: #FAFAFA;
+  background-color: #FFF;
 }
 #feed .ui.divided.inbox.selection.list.tab {
   height: 84%;
@@ -98,9 +99,8 @@ body {
 .ui .bottom{
   position: absolute;
   width: inherit;
-  bottom: 3px;
+  bottom: 3px;                    
 }
-
 /*******************************
           Responsive
 *******************************/

@@ -5,3 +5,14 @@
 .hidden{
 	display: none;
 }
+input#title{
+	background-color: #FFF;
+	width: 100%;
+    font-size: xx-large;
+}
+.froala-reactive-meteorized-override>.fr-toolbar{
+	border-top: 5px solid #00B5AD;
+}
+.body-dirty{
+	border-top: 5px solid #E9A9A9 !important;
+}

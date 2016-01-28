@@ -1,11 +1,8 @@
 <template name="editor">
 	{{#with expandedPost}}
       <div id="editor" class="ui">
-      	<input type="hidden" name="postId" id="postId" value="{{_id}}"/>
-        <h1 id="title" contentEditable="true" class="ui header" placeholder="Enter Title Here">{{title}} </h1>
-        <div class="ui clearing divider"></div>
-        <textarea data-uk-markdownarea="{mode:'tab'}">{{body}}</textarea>
-        <!-- <textarea id="body">{{body}}</textarea> -->
+        <input type="text" id="title" class="ui header" placeholder="Enter Title Here" value="{{title}}"/>
+         {{> froalaReactive getFEContext}}
       </div>
      {{/with}}
 </template>
