@@ -1,8 +1,24 @@
 <template name="editor">
 	{{#with expandedPost}}
       <div id="editor" class="ui">
-        <input type="text" id="title" class="ui header" placeholder="Enter Title Here" value="{{title}}"/>
-         {{> froalaReactive getFEContext}}
+	       <div class="ui grid ">
+	        	<div class="fourteen wide column">
+	        		<input type="text" id="title" class="ui header" placeholder="Enter Title Here" value="{{title}}"/>
+	        	</div>
+	        	<div class="two wide column">
+	        		{{#if isPublished}}
+	        			<button class="ui small red button" id="publish-btn">Unpublish</button>
+	        		{{else}}
+	        			<button class="ui small teal button" id="publish-btn">Publish</button>
+	        		{{/if}}
+
+
+
+	        	</div>
+	       </div>
+
+	         {{> froalaReactive getFEContext}}
+
       </div>
      {{/with}}
 </template>
