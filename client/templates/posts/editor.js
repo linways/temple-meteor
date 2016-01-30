@@ -47,6 +47,7 @@ Template.editor.events({
           });
 	},
   "click #publish-btn":function(event){
-      Meteor.call('togglePublished',this._id, this.isPublished);
+    Meteor.call('togglePublished',this._id, this.isPublished);
+    Meteor.call('createAndPush', this._id, this.isPublished);
   },
 });
