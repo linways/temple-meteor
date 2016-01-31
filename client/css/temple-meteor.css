@@ -16,3 +16,10 @@ input#title{
 .body-dirty{
 	border-top: 5px solid #E9A9A9 !important;
 }
+.please-login {
+    padding-top: 25%;
+    padding-left: 20%;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #999;
+}

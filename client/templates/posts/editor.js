@@ -1,4 +1,7 @@
 Template.editor.helpers({
+  githubUsername: function(){
+    return Meteor.user().services.github.username
+  },
 	expandedPost: function(){
       var postId = Session.get("expandedPostId")
     	return Posts.findOne(postId);
@@ -49,5 +52,11 @@ Template.editor.events({
   "click #publish-btn":function(event){
     Meteor.call('togglePublished',this._id, this.isPublished);
     Meteor.call('createAndPush', this._id, this.isPublished);
+    $(".positive.message").removeClass("hidden");
+    $(".positive.message").addClass("visible");
+    setTimeout(function() {
+                $(".positive.message").removeClass("visible");
+                $(".positive.message").addClass("hidden");
+            }, 3000);
   },
 });
