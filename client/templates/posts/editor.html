@@ -2,18 +2,39 @@
 	<div class="ui positive hidden message">
 	  	<p>Visit <a href="https://{{githubUsername}}.github.io" target="_blank">{{githubUsername}}.github.io</a> to see the changes.</p>
 	</div>
+	{{#unless expandedPost}}
+		<div class="row small-device-options hidden-sm hidden-md hidden-lg">
+	        			<div class="col-xs-1">
+			        		<span class="glyphicon glyphicon-menu-hamburger toggle-left-container"></span>
+			        	</div>
+		</div>
+        <div class="row please-login toggle-left-container hidden-sm hidden-md hidden-lg">Tap here to view your posts.</div>
+
+	{{/unless}}
 
 	{{#with expandedPost}}
       <div id="editor" class="ui">
-	       <div class="ui grid ">
-	        	<div class="fourteen wide column">
+	       <div class="row header-container">
+	        	<div class="title-container  col-xs-12 col-sm-9 col-md-10">
+	        		<div class="row small-device-options hidden-sm hidden-md hidden-lg">
+	        			<div class="col-xs-1">
+			        		<span class="glyphicon glyphicon-menu-hamburger toggle-left-container"></span>
+			        	</div>
+			        	<div class="col-xs-5">
+			        		{{#if isPublished}}
+			        			<button class="btn red" id="publish-btn">Unpublish</button>
+			        		{{else}}
+			        			<button class="btn teal" id="publish-btn">Publish</button>
+			        		{{/if}}
+			        	</div>
+		        	</div>
 	        		<input type="text" id="title" class="ui header" placeholder="Enter Title Here" value="{{title}}"/>
 	        	</div>
-	        	<div class="two wide column">
+	        	<div class="pubbtn-container hidden-xs col-sm-3 col-md-2">
 	        		{{#if isPublished}}
-	        			<button class="ui small red button" id="publish-btn">Unpublish</button>
+	        			<button class="btn red" id="publish-btn">Unpublish</button>
 	        		{{else}}
-	        			<button class="ui small teal button" id="publish-btn">Publish</button>
+	        			<button class="btn teal" id="publish-btn">Publish</button>
 	        		{{/if}}
 	        	</div>
 	       </div>

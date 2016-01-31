@@ -1,20 +1,31 @@
 <template name="postList">
-	<h2 class="ui header">
-		<div class="ui mini teal button add new" id="add-new"><i class="add icon"></i>Add new</div>
-	</h2>
-	<div class="ui tabular filter menu">
-		<a data-tab="published" class="active item">Published</a>
-		<a data-tab="draft" class="item">Draft</a>
-	</div>
-	<div data-tab="published" class="ui divided inbox selection list tab published">
-		{{#each publishedPosts}}
-			{{> postShort}}
-		{{/each}}
-	</div>
-	<div data-tab="draft" class="ui divided inbox selection list tab draft">
-		{{#each draftPosts}}
-			{{> postShort}}
-		{{/each}}
-	</div>
-	<div class="ui divider"></div>
+
+		<div class="header section">
+                <button type="button" class="btn btn-sm teal add-new" id="add-new"><span class="glyphicon glyphicon-plus"></span>&nbsp;ADD NEW</button>
+            </div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#published" aria-controls="published" role="tab" data-toggle="tab">Published</a></li>
+            <li role="presentation"><a href="#draft" aria-controls="draft" role="tab" data-toggle="tab">Draft</a></li>
+
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="published">
+                <div class="inbox">
+					{{#each publishedPosts}}
+						{{> postShort}}
+					{{/each}}
+                </div>
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="draft">
+                 <div class="inbox">
+					{{#each draftPosts}}
+						{{> postShort}}
+					{{/each}}
+                </div>
+            </div>
+          </div>
 </template>

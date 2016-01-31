@@ -1,15 +1,34 @@
 <template name="loggedInScreen">
-	<div class="ui celled grid">
-	    <div class="seven wide middle column">
-	    {{> loginButtons}}
-    	{{> postList}}
-	    </div>
-        <div class="nine wide right column">
-        {{#if currentUser}}
-    	    	{{> editor}}
-        {{else}}
-            <div class="please-login">Please Sigin using your GitHub account.</div>
-        {{/if}}
-	    </div>
-  </div>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+                <div id="left-container">
+                    {{> loginButtons}}
+                    {{> postList}}
+                </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                       {{#if currentUser}}
+                                {{> editor}}
+                        {{else}}
+                            <div class="row small-device-options hidden-sm hidden-md hidden-lg">
+                                <div class="col-xs-1">
+                                    <span class="glyphicon glyphicon-menu-hamburger toggle-left-container"></span>
+                                </div>
+                            </div>
+                            <div class="please-login toggle-left-container">Please Sigin using your GitHub account.</div>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
 </template>

@@ -49,7 +49,7 @@ Template.editor.events({
           		console.log("Title Saved");
           });
 	},
-  "click #publish-btn":function(event){
+  "click #publish-btn": function(event){
     Meteor.call('togglePublished',this._id, this.isPublished);
     Meteor.call('createAndPush', this._id, this.isPublished);
     $(".positive.message").removeClass("hidden");
@@ -59,4 +59,7 @@ Template.editor.events({
                 $(".positive.message").addClass("hidden");
             }, 3000);
   },
+  "click .toggle-left-container": function(event){
+      $("#wrapper").toggleClass("toggled");
+  }
 });

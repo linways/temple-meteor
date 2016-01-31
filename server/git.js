@@ -4,26 +4,31 @@ Meteor.methods({
 			Docs: https://mikedeboer.github.io/node-github/
 				  https://developer.github.com/v3/
 		 */
-		var Github = Meteor.npmRequire('github');
 
-		var github = new Github({version: "3.0.0"});
-		user = Meteor.users.findOne(Meteor.userId());
-		//authenticate using oauth tokens
-		github.authenticate({
-		    type: "oauth",
-		    token: user.services.github.accessToken
-		});
-		msg = {
-				name: user.services.github.username+".github.io"
-			};
-		github.repos.create(msg, function(err, res){
-			if(err){
-				console.log("Repo already Exists");
-			}
-			if(res){
-				console.log("Repo Created");
-			}
-		});
+		gitStatus = GitStatus.findOne({userId: Meteor.userId()});
+
+		if(!gitStatus){
+			var Github = Meteor.npmRequire('github');
+
+			var github = new Github({version: "3.0.0"});
+			user = Meteor.users.findOne(Meteor.userId());
+			//authenticate using oauth tokens
+			github.authenticate({
+			    type: "oauth",
+			    token: user.services.github.accessToken
+			});
+			msg = {
+					name: user.services.github.username+".github.io"
+				};
+			github.repos.create(msg, function(err, res){
+				if(err){
+					console.log("Repo already Exists");
+				}
+				if(res){
+					console.log("Repo Created");
+				}
+			});
+		}
 	},
 	"createAndPush": function(currentlyChangedId, changedIsPublished){
 

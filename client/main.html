@@ -1,6 +1,12 @@
 
-<body id="feed">
-  {{> loggedInScreen}}
+<body>
+    {{#if currentUser}}
+        {{> loggedInScreen}}
+    {{else}}
+        <div class="center-div">
+            {{> loginButtons}}
+        </div>
+    {{/if}}
 </body>
 
 

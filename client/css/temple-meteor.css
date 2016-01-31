@@ -23,3 +23,189 @@ input#title{
     font-weight: bold;
     color: #999;
 }
+input#title {
+    background-color: #FFF;
+    width: 100%;
+    font-size: xx-large;
+    border: none;
+    font-weight: bold;
+}
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+}
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+body{
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background: #FFF;
+    text-rendering: optimizeLegibility;
+}
+.header {
+  font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+.header.section{
+    padding-bottom: 1em;
+}
+ul.nav.nav-tabs>li>a{
+    color: rgba(0,0,0,.6);
+}
+ul.nav.nav-tabs>li.active{
+    color: rgba(0,0,0,.8);
+    font-weight: 700;
+}
+
+ul.nav.nav-tabs{
+    margin-bottom: 0.7rem;
+}
+.inbox .item {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    line-height: 1.2em;
+    font-size: 1em;
+    border-top: 1px solid rgba(0,0,0,.1);
+
+}
+.item:first-child {
+    border-top-width: 0;
+}
+.item:hover {
+    background-color: rgba(0,0,0,.02);
+    color: rgba(0,0,0,.7);
+    cursor: pointer;
+}
+.inbox .item>.left.floated {
+    margin-right: 1em;
+    float: left;
+}
+.inbox .item>.right.floated {
+    margin-left: 1em;
+    float: right;
+}
+
+.inbox .item .description,.date {
+    margin-left: 0.5em;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: rgba(0,0,0,.5);
+}
+.red{
+    background-color: #D95C5C;
+}
+.teal{
+    background-color: #00B5AD;
+}
+.btn{
+    color: #FFF;
+    font-weight: 700;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.05));
+    border-radius: .25em;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.08) inset;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.08) inset;
+}
+.btn:hover{
+    color:#FFF;
+    background-image: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1));
+}
+.pubbtn-container{
+    text-align: right;
+}
+.row.header-container{
+    padding-bottom: 1rem;
+}
+.small-device-options .col-xs-1{
+     padding-top: 0.5em;
+}
+.toggle-left-container{
+    cursor: pointer;
+}
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #FFF;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 100%;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+div#left-container {
+    padding: 1.5em;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 40%;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 40%;
+        border-right: 1px solid rgba(0,0,0,.1);
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
